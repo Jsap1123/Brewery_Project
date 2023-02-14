@@ -1,0 +1,19 @@
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    padding: 5px;
+    text-align: center;
+    color: rgb(224, 143, 13);
+    background-color: rgb(47, 24, 24);
+}
+
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    padding: 5px;
+    text-align: center;
+    color: rgb(224, 143, 13);
+    background-color: rgb(47, 24, 24);
+}

@@ -1,0 +1,46 @@
+<p>Brewery Details</p>
+<td> <button class="btn btn-danger btn-rounded" (click)="getBreweries()"> Display All Breweries</button></td>
+
+    <table class="table">
+        <br>
+        <tr>
+        <th scope="col"></th>
+        <!-- <th>Id</th> -->
+        <th>Name</th>
+        <th>Brewery_Type</th>
+        <th>Street</th>
+        <!-- <th>Address_2</th>
+        <th>Address_3</th> -->
+        <th>City</th>
+        <th>State</th>
+        <!-- <th>County_Province</th> -->
+        <th>Postal_Code</th>
+        <th>Country</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Phone</th>
+        <th>Website_Url</th>
+        <!-- <th>Updated_At</th>
+        <th>Created_At</th> -->
+        </tr>
+        <tr *ngFor="let user of users">
+            <th scope="row"></th>
+            <!-- <th>{{user.id}}</th> -->
+            <th>{{user.name}}</th>
+            <th>{{user.brewery_type}}</th>
+            <th>{{user.street}}</th>
+            <!-- <th>{{user.address_2}}</th>
+            <th>{{user.address_3}}</th> -->
+            <th>{{user.city}}</th>
+            <th>{{user.state}}</th>
+            <!-- <th>{{user.county_province}}</th> -->
+            <th>{{user.postal_code}}</th>
+            <th>{{user.country}}</th>
+            <th>{{user.longitude}}</th>
+            <th>{{user.latitude}}</th>
+            <th>{{user.phone}}</th>
+            <th>{{user.website_url}}</th>
+            <!-- <th>{{user.updated_at}}</th>
+            <th>{{user.created_at}}</th> -->
+        </tr>
+    </table>

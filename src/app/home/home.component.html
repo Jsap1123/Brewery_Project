@@ -1,0 +1,63 @@
+<br>
+<br>
+<div id="search">
+    <form [formGroup]="profileForm" (ngSubmit)="search()">
+        &nbsp;
+        <label for="city">Enter US City Name: </label>
+        &nbsp;
+        <input type="text" name="city" required formControlName="city" />
+        &nbsp;
+        <button type="submit">Search</button>
+    </form>
+</div>
+<br>
+<div id="selectBrewery">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Brewery Name</th>
+                <th scope="col">Brewey Type</th>
+                <th scope="col">Address</th>
+                <th scope="col">Website URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let brewery of breweries | paginate: {itemsPerPage: itemsPerPage, currentPage: p}"
+                (click)="selectBrewery(brewery)">
+                <td>{{ brewery.name }}</td>
+                <td>{{ brewery.brewery_type }}</td>
+                <td>{{ brewery.street +", "+ brewery.city +", "+ brewery.state +", "+ brewery.postal_code }}</td>
+                <a href="{{ brewery.website_url }}">
+                    <td>{{ brewery.website_url }}</td>
+                </a>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<br>
+<div *ngIf="selectedBrewery">
+    
+    <h2>&nbsp;Brewery Details</h2>
+    
+    <div>&nbsp;&nbsp;Name: {{selectedBrewery.name}}</div>
+    
+    <div>&nbsp;&nbsp;Address: {{ selectedBrewery.street +", "+ selectedBrewery.city +", "+ selectedBrewery.state +", "+
+        selectedBrewery.postal_code }}
+    </div>
+
+</div>
+<div class="map" id="map" class="match-parent"></div>
+<div>&nbsp;&nbsp;(Remove Map button must be clicked before selecting another brewery)</div>
+<div id="removeMap">
+    <form [formGroup]="profileForm" (ngSubmit)="removeMap()">
+        &nbsp;
+        <button type="submit">Remove Map</button>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>

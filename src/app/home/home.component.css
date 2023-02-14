@@ -1,0 +1,22 @@
+/* #map {
+    width: 30%;
+    height: 250px;
+    border-radius: 10px;
+    border: 1px solid black;
+  } */
+
+.match-parent {
+    /* left: 20px; */
+    /* border-left: 20px; */
+    width: 30%;
+    height: 250px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+.marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
